@@ -1,9 +1,42 @@
 using System;
 
-class Program
+DisplayWelcome();
+
+string userName = PromptUserName();
+int userNumber = PromptUserNumber();
+int squaredNumber = SquareNumber(userNumber);
+DisplayResult(userName, squaredNumber);
+
+static void DisplayWelcome()
 {
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello Prep5 World!");
-    }
+    Console.WriteLine("Welcome to the program!");
+}
+
+static string PromptUserName()
+{
+    Console.Write($"Plese enter your name: ");
+    string name = Console.ReadLine();
+
+    return name;
+}
+
+static int PromptUserNumber()
+{
+    Console.Write($"Please enter your favarite number: ");
+    string userNumber = Console.ReadLine();
+    int favoriteNumber = int.Parse(userNumber);
+
+    return favoriteNumber;
+}
+
+static int SquareNumber(int num)
+{
+    int square = num * num;
+
+    return square;
+}
+
+static void DisplayResult(string name, int square)
+{
+    Console.WriteLine($"{name}, the square of your number is {square}");
 }
